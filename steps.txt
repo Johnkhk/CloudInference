@@ -1,0 +1,14 @@
+#run backend
+#activate venv
+pip3 install --upgrade pip setuptools
+source /Users/john/Desktop/code/web/envs/cloudinfenv/bin/activate
+/Users/john/Desktop/code/web/nlpweb/backend_nlp/backend/python3 manage.py runserver
+
+#run frontend
+npm run dev
+
+
+working env:(red)
+eb init -p python-3.8 django-tutorial
+eb create djangoenvpls2
+psycog2-binary==2.8.5

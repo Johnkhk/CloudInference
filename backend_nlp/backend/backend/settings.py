@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+from re import S
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -34,7 +35,10 @@ CSRF_TRUSTED_ORIGINS = ['http://localhost:3000', 'https://*.127.0.0.1', 'http://
 CORS_ORIGIN_WHITELIST = [
     'https://localhost:3000'
 ]
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*','env-cloudinf.eba-cra3dxqp.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['*','env-cloudinf.eba-cra3dxqp.us-west-2.elasticbeanstalk.com', 'django-env38.eba-bqym8ypp.us-west-2.elasticbeanstalk.com']
+
+
 CSRF_COOKIE_NAME = "csrftoken"
 
 
@@ -49,7 +53,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'benlp.apps.BenlpConfig',
     'rest_framework',
-    'corsheaders'
+    'corsheaders',
+    "django_nextjs"
 ]
 
 MIDDLEWARE = [
@@ -140,6 +145,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# STATIC_ROOT=BASE_DIR / "staticfiles-cdn"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

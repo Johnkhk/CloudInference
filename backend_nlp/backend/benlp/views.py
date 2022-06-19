@@ -19,6 +19,11 @@ import json
 # class Summarizer_View(request, *args, **kwargs):
 from django.views.decorators.csrf import csrf_exempt
 
+from django_nextjs.render import render_nextjs_page_sync
+
+def index(request):
+    return render_nextjs_page_sync(request)
+
 @csrf_exempt
 def Summarizer_View(request):
     print(request.body)
